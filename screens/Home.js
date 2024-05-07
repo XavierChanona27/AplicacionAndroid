@@ -5,12 +5,14 @@ import { StatusBar } from "expo-status-bar";
 import * as Icon from "react-native-feather";
 import { themeColors } from "../theme";
 import Categories from "../components/categories";
-import { featured } from "../constants";
+import { featured, publicaciones } from "../constants";
 import FeaturedRow from "../components/featuredRow";
+import PublicacionesRow from "../components/PublicacionesRow";
 
 const Home = ({ navigation }) => {
   return (
-    <SafeAreaView className="bg-white">
+    <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
+      <StatusBar style="auto" />
       <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: 20, paddingVertical: 50 }}>
         <View style={{ flexDirection: 'row', alignItems: 'center', flex: 1 }}>
           <Icon.Settings width={25} height={25} stroke="#ccc" style={{ marginRight: 10 }} />
@@ -29,11 +31,25 @@ const Home = ({ navigation }) => {
       </View>
 
       <ScrollView showVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 20 }}>
-        {/* categories*/}
+        {/* Categories */}
         <Categories />
-        {/* featured */}
-        <View className="mt-5">
-          {[featured, featured, featured].map((item, index) => (
+
+        {/* Publicaciones */}
+        <View style={{ marginTop: 20 }}>
+          {publicaciones.map((item, index) => (
+            <PublicacionesRow
+              key={index}
+              title={item.title}
+              description={item.description}
+              price={item.price}
+              donado={item.isDonado}
+            />
+          ))}
+        </View>
+
+        {/* Featured */}
+        <View style={{ marginTop: 20 }}>
+          {featured.map((item, index) => (
             <FeaturedRow
               key={index}
               title={item.title}
