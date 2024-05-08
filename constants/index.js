@@ -110,8 +110,14 @@ export const categories = [
     ],
   };
   
-  export const publicaciones = [
-    {
+  export const publicactions = {
+    
+        id: 1,
+        title: "Publicaciones",
+        description: "Encuentra los mejores negocios",
+        publicaciones :[
+       {
+
       id: 1,
       title: "Publicación 1",
       description: "Descripción de la publicación 1",
@@ -132,5 +138,6 @@ export const categories = [
       price: 0,
       isDonado: true,
     },
-  ];
+  ],
+};
   

@@ -5,7 +5,7 @@ import { StatusBar } from "expo-status-bar";
 import * as Icon from "react-native-feather";
 import { themeColors } from "../theme";
 import Categories from "../components/categories";
-import { featured, publicaciones } from "../constants";
+import { featured,  publicactions } from "../constants";
 import FeaturedRow from "../components/featuredRow";
 import PublicacionesRow from "../components/PublicacionesRow";
 
@@ -36,13 +36,14 @@ const Home = ({ navigation }) => {
 
         {/* Publicaciones */}
         <View style={{ marginTop: 20 }}>
-          {publicaciones.map((item, index) => (
+          {publicactions.map((item, index) => (
             <PublicacionesRow
               key={index}
               title={item.title}
+              publicaciones={item.publicactions}
               description={item.description}
               price={item.price}
-              donado={item.isDonado}
+              
             />
           ))}
         </View>

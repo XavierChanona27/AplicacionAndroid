@@ -1,14 +1,14 @@
 import { View, Text, TouchableNativeFeedback, Image, Platform, StyleSheet } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
-import { themeColors } from "../theme";
+
 
 export default function PublicCard({ item }) {
     const navigation = useNavigation();
 
     return (
         <TouchableNativeFeedback
-            onPress={() => navigation.navigate('Negocios', { ...item })}
+            onPress={() => navigation.navigate('Publicaciones', { ...item })}
         >
             <View style={styles.cardContainer}>
                 <Image
