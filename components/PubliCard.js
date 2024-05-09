@@ -16,9 +16,7 @@ export default function PublicCard({ item }) {
                     source={require('../assets/negocios/negocio1.jpg')} // Cambiamos item.image por una imagen predeterminada
                 />
                 <View style={styles.cardContent}>
-                    <Text style={styles.title}>{item.title}</Text>
-                    <Text style={styles.description}>{item.description}</Text>
-                    <Text style={styles.price}>Precio: {item.isDonado ? "Donado" : `$${item.price}`}</Text> {/* Mostramos el precio o si es donado */}
+                    
                 </View>
             </View>
         </TouchableNativeFeedback>
